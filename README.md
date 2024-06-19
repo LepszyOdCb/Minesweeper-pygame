@@ -2,4 +2,4 @@
 Minesweeper in pygame, python.
 
 Important!!
-Change imgs locations
+Change imgs locations if not working
