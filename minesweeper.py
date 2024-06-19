@@ -6,7 +6,7 @@ import os
 w = 500
 h = 554
 pygame.init()
-pygame.display.set_icon(pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/9.png"))
+pygame.display.set_icon(pygame.image.load("9.png"))
 pygame.display.set_caption('Minesweeper')
 screen = pygame.display.set_mode((w, h))
 time = pygame.time.Clock()
@@ -23,25 +23,25 @@ difficulty = 1
 size = 1
 
 # Load imgs
-blank = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/blank.png")
-flag = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/flag.png")
-xmark = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/xmark.png")
-win = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/win.png")
-lose = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/lose.png")
-idle = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/idle.png")
-settings_img = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/settings.png")  
-exit_img = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/exit.png") 
-logo = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/logo.png")
-img_easy = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/easy.png")
-img_normal = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/normal.png")
-img_hard = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/hard.png")
-img_small = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/small.png")
-img_medium = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/medium.png")
-img_big = pygame.image.load("C:/Users/Kacper/Desktop/minesweeper/big.png")
+blank = pygame.image.load("blank.png")
+flag = pygame.image.load("flag.png")
+xmark = pygame.image.load("xmark.png")
+win = pygame.image.load("win.png")
+lose = pygame.image.load("lose.png")
+idle = pygame.image.load("idle.png")
+settings_img = pygame.image.load("settings.png")  
+exit_img = pygame.image.load("exit.png") 
+logo = pygame.image.load("logo.png")
+img_easy = pygame.image.load("easy.png")
+img_normal = pygame.image.load("normal.png")
+img_hard = pygame.image.load("hard.png")
+img_small = pygame.image.load("small.png")
+img_medium = pygame.image.load("medium.png")
+img_big = pygame.image.load("big.png")
 
 file_names = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png"]
 nums = {}
-files = "C:/Users/Kacper/Desktop/minesweeper/"
+files = ""
 for i, file_name in enumerate(file_names, start=1):
     image_path = os.path.join(files, file_name)
     nums[i] = pygame.image.load(image_path)
@@ -213,7 +213,7 @@ while running:
         # if game lost
         if all(revealed_map[x][y] for x in range(map_x) for y in range(map_y)):
             win_lose_idle = lose
-            for x in range(map_x):
+            for x in range(map_x): 
                 for y in range(map_y):
                     if game_map[x][y] != 9 and flags[x][y]:
                         screen.blit(xmark, (x * cell_size, y * cell_size + offset))
